@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="3" failures="0" name="org.jmrtd.test.protocol.AESSecureMessagingWrapperTest" time="0.02" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="java.vm.version" value="13.0.5.1+1-Debian-1"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-13-openjdk-amd64/lib"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/zodi4c/Downloads/jmrtd-code-r1863-trunk-jmrtd"/>
+    <property name="java.vm.vendor" value="Debian"/>
+    <property name="java.vendor.url" value="https://tracker.debian.org/openjdk-13"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/zodi4c/Downloads/jmrtd-code-r1863-trunk-jmrtd"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="13.0.5.1+1-Debian-1"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/opt/apache-maven-3.8.4/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/opt/apache-maven-3.8.4/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="57.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="5.10.0-6parrot1-amd64"/>
+    <property name="library.jansi.path" value="/opt/apache-maven-3.8.4/lib/jansi-native"/>
+    <property name="user.home" value="/home/zodi4c"/>
+    <property name="user.timezone" value="Atlantic/Canary"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="13"/>
+    <property name="user.name" value="zodi4c"/>
+    <property name="java.class.path" value="/opt/apache-maven-3.8.4/boot/plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="13"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher verify"/>
+    <property name="java.home" value="/usr/lib/jvm/java-13-openjdk-amd64"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="13.0.5.1"/>
+    <property name="java.vendor" value="Debian"/>
+    <property name="maven.home" value="/opt/apache-maven-3.8.4"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.version.date" value="2020-11-06"/>
+    <property name="java.vendor.url.bug" value="https://bugs.debian.org/openjdk-13"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+  </properties>
+  <testcase classname="org.jmrtd.test.protocol.AESSecureMessagingWrapperTest" name="testAESSecureMessagingWrapper" time="0.015"/>
+  <testcase classname="org.jmrtd.test.protocol.AESSecureMessagingWrapperTest" name="testAESSecureMessagingWrapperEquals" time="0"/>
+  <testcase classname="org.jmrtd.test.protocol.AESSecureMessagingWrapperTest" name="testAESSecureMessagingWrapperWrapUnwrap" time="0.005"/>
+</testsuite>
