@@ -48,6 +48,7 @@ import java.security.spec.ECPublicKeySpec;
 import java.security.spec.EllipticCurve;
 import java.security.spec.KeySpec;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -604,6 +605,9 @@ public class PACEProtocol {
       byte[] pcdEncodedPublicKey = encodePublicKeyForSmartCard(pcdPublicKey);
       byte[] step3Data = TLVUtil.wrapDO(0x83, pcdEncodedPublicKey);
       byte[] step3Response = service.sendGeneralAuthenticate(wrapper, step3Data, maxTranceiveLengthForProtocol, false);
+      try {
+        service.sendGeneralAuthenticate(wrapper, step3Data, maxTranceiveLengthForProtocol, true);
+      } catch (Exception e) {}
       byte[] piccEncodedPublicKey = TLVUtil.unwrapDO(0x84, step3Response);
       PublicKey piccPublicKey = decodePublicKeyFromSmartCard(piccEncodedPublicKey, ephemeralParams);
 
@@ -668,7 +672,24 @@ public class PACEProtocol {
     try {
       byte[] pcdToken = generateAuthenticationToken(oid, macKey, piccPublicKey);
       byte[] step4Data = TLVUtil.wrapDO(0x85, pcdToken);
+      
+      byte[] fakeToken = pcdToken.clone();
+      fakeToken[0] = 0;
+      byte[] fakeData = TLVUtil.wrapDO(0x85, fakeToken);
+      LOGGER.warning(Base64.getEncoder().encodeToString(step4Data));
+      LOGGER.warning(Base64.getEncoder().encodeToString(fakeData));
+      long start = System.currentTimeMillis();
+      for (int i = 0; i < 25; i++) {
+        try {
+          service.sendGeneralAuthenticate(wrapper, fakeData, 256, true);
+        } catch (Exception e) {
+          long current = System.currentTimeMillis();
+          LOGGER.warning(String.format("(%d) %d", i + 1, current - start));
+          start = current;
+        }
+      }
       byte[] step4Response = service.sendGeneralAuthenticate(wrapper, step4Data, 256, true);
+
       TLVInputStream step4ResponseInputStream = new TLVInputStream(new ByteArrayInputStream(step4Response));
       try {
         int tag86 = step4ResponseInputStream.readTag();
